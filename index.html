@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>帳號密碼查詢與教學影片</title>
+    <script>
+        // 完整的帳號、密碼和驗證碼列表
+        const accountDetails = {
+            "鄭仲恆": { "account": "Panda01@pandach2025.onmicrosoft.com", "password": "ABCxyz!12", "code": "245" },
+            "魏翊安": { "account": "Panda02@pandach2025.onmicrosoft.com", "password": "ABCxyz!13", "code": "378" },
+            "洪郅皓": { "account": "Panda03@pandach2025.onmicrosoft.com", "password": "ABCxyz!14", "code": "512" },
+            "吳鈺棠": { "account": "Panda04@pandach2025.onmicrosoft.com", "password": "ABCxyz!15", "code": "643" },
+            "陳岳陽": { "account": "Panda05@pandach2025.onmicrosoft.com", "password": "ABCxyz!16", "code": "789" },
+            "洪辰維": { "account": "Panda06@pandach2025.onmicrosoft.com", "password": "ABCxyz!17", "code": "908" },
+            "鄭惟哲": { "account": "Panda07@pandach2025.onmicrosoft.com", "password": "ABCxyz!18", "code": "123" },
+            "方芊媚": { "account": "Panda08@pandach2025.onmicrosoft.com", "password": "CH119qq1", "code": "456" },
+            "林羿融": { "account": "Panda09@pandach2025.onmicrosoft.com", "password": "CH119qq2", "code": "789" },
+            "楊子立": { "account": "Panda10@pandach2025.onmicrosoft.com", "password": "CH119qq3", "code": "234" },
+            "楊子正": { "account": "Panda11@pandach2025.onmicrosoft.com", "password": "CH119qq4", "code": "567" },
+            "張育傑": { "account": "Panda12@pandach2025.onmicrosoft.com", "password": "CH119qq5", "code": "890" },
+            "魏瑜萱": { "account": "Panda13@pandach2025.onmicrosoft.com", "password": "CH119qq6", "code": "345" },
+            "賴辰閔": { "account": "Panda14@pandach2025.onmicrosoft.com", "password": "CH119qq7", "code": "678" },
+            "廖英棋": { "account": "Panda15@pandach2025.onmicrosoft.com", "password": "CH119qq8", "code": "901" },
+            "王泫云": { "account": "Panda01@pandach2025.onmicrosoft.com", "password": "ABCxyz!12", "code": "111" },
+            "王泫棠": { "account": "Panda02@pandach2025.onmicrosoft.com", "password": "ABCxyz!13", "code": "222" },
+            "王泫文": { "account": "Panda01@pandach2025.onmicrosoft.com", "password": "ABCxyz!12", "code": "333" }
+        };
+
+        function getAccountDetails() {
+            const name = document.getElementById('nameInput').value.trim();
+            const code = document.getElementById('codeInput').value.trim();
+            const result = accountDetails[name];
+
+            if (result) {
+                if (result.code === code) {
+                    // 顯示帳號和密碼
+                    document.getElementById('account').textContent = "帳號: " + result.account;
+                    document.getElementById('password').textContent = "密碼: " + result.password;
+                } else {
+                    // 驗證碼錯誤
+                    alert("驗證碼錯誤，請重新輸入！");
+                }
+            } else {
+                alert("名字不正確，請再試一次！");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>僑仁國小114年寒假麥塊查詢帳號密碼</h1>
+    <label for="nameInput">名字:</label>
+    <input type="text" id="nameInput" placeholder="輸入您的名字">
+    <br>
+    <label for="codeInput">驗證碼:</label>
+    <input type="text" id="codeInput" placeholder="輸入三位數驗證碼">
+    <br>
+    <button onclick="getAccountDetails()">查詢</button>
+
+    <p id="account"></p>
+    <p id="password"></p>
+
+    <hr>
+
+    <h1>教學影片</h1>
+    <p>以下為</p>
+    <p>一小時程式設計表演必須繼續</p>
+    <p>教學影片連結，點擊觀看：</p>
+    <ul>
+        <li><a href="https://youtu.be/JEc-g-kGwZs" target="_blank">FUN 01 開場 與任務一</a></li>
+        <li><a href="https://youtu.be/VOZZ94ge3k8?si=sdycd_nz5Rs-hPAd" target="_blank">FUN 02 任務一</a></li>
+        <li><a href="https://youtu.be/T-XIemib7Cw" target="_blank">FUN_03_任務二設計服裝_1</a></li>
+        <li><a href="https://youtu.be/v-oA4sfOv7o" target="_blank">FUN_04_任務三 場景布置</a></li>
+        <li><a href="https://youtu.be/Mw9BrNypxjg" target="_blank">FUN_05_任務四編排一支舞蹈_與結束</a></li>
+    </ul>
+</body>
+</html>
